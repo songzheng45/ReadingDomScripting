@@ -20,3 +20,24 @@ if (condition) {
 
 
 ### 逻辑操作符
+1. 逻辑与操作符（&&）
+只要有一个操作数是 false，结果就为 false。当两个操作数都为 true 时，结果才为 true。
+```javascript
+if (condition1 && condition2) {
+    statements;
+}
+```
+2. 逻辑或操作符（||）
+只要有一个操作数是true，结果就为true。当两个操作数都为false时，结果才为false。
+```javascript
+if (condition1 || condition2) {
+    statements;
+}
+```
+3. 逻辑非操作符（!）
+只能作用于单个操作数，结果是将操作数返回的 Boolean 值取反。
+```javascript
+if (!(1 > 2))) {
+    // ......
+}
+```
