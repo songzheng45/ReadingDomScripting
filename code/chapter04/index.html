@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Image Gallery</title>
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Snapshots</h1>
+        <ul>
+            <li>
+                <a href="images/1.jpg" title="EASY DIVESHOP" onclick="showPic(this); return false;">EASY DIVESHOP</a>
+            </li>
+            <li>
+                <a href="images/2.jpg" title="易潜水" onclick="showPic(this); return false;">易潜水</a>
+            </li>
+            <li>
+                <a href="images/3.jpg" title="洋葱" onclick="showPic(this); return false;">洋葱</a>
+            </li>
+        </ul>
+        <img id="placeholder" src="images/placeholder.jpg" alt="my image Gallery">
+        <p id="description">选择一张图片</p>
+        <script type="text/javascript" src="scripts/showPic.js"></script>
+    </body>
+</html>
