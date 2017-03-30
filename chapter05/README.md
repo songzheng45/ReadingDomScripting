@@ -42,7 +42,8 @@ function popup(winURL){
 ```javascript
 <a href="http://www.example.com" onclick="popup(this.href); return false;">Example</a>
 ```
-这样即使JavaScript被禁用，这个链接也是可用的。
+这样即使JavaScript被禁用，这个链接也是可用的。  
+但是这种方式不是最优，没有实现JavaScript和HTML文档结构的分离，应该采用在外部JavaScript文件中，绑定元素的事件的方式。
 
 ## 渐进增强
 >向CSS学习：CSS最大的有点是，将Web文档的HTML标记和样式分离开来。  
@@ -53,11 +54,12 @@ window.onload = prepareLinks;
 
 function prepareLiniks(){
     element.event = action...
+    // 如 element.click = function(){}
 }
 ```
 
 ## 向后兼容
-某些古老的浏览器可能无法理解DOM提供的方法和属性。  
+检测老的浏览器是否支持对象的某些属性或方法，如果不支持则属性或方法为null。使用对象检测实现向后兼容。  
 
 ### 对象检测
 ```javascript
@@ -71,7 +73,7 @@ if (!document.getElementById || !document.getElementsByTagName) {
     return false;
 }
 ```
-这段代码的含义是，如果浏览器不支持`getElementById`或`getElementsByTagName`方法，则停止向下执行。  
+以上代码的作用是，如果浏览器不支持`document`对象的`getElementById`或`getElementsByTagName`方法，则代码段立即返回。  
 注意：使用对象检测时，一定要删除方法名后面的圆括号。
 
 ## 性能考虑
